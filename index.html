@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="utility.css" />
+    <title>Weather App</title>
+  </head>
+  <body>
+    <div id="main" class="flex-center flex-col">
+      <nav class="flex-even">
+        <input type="text" placeholder="Enter Location" id="locationInput" />
+        <button id="search"><i class="ri-search-line"></i></button>
+      </nav>
+      <section class="flex-center flex-col">
+        <div id="weatherImg" class="flex-center">
+          <img src="Images/clear.png" alt="">
+          <!-- <div class="img">weather img</div> -->
+        </div>
+        <div id="temperature" class="flex-center">
+          <h1 id="temp">10°C </h1>
+        </div>
+        <div id="location">
+          <h3 id="loc">Bangalore</h3>
+        </div>
+        <div id="otherdata" class="flex-btw">
+            <div id="Humidity" class="flex-center one">
+                <img src="Images/icons8-waves-100.png" alt="">
+                <div class="flex-center flex-col two">
+                    <p id="hum">53%</p>
+                    <p class="sec-titile">Humidity</p>
+                </div>
+            </div>
+            <div id="windSpeed" class="flex-center one">
+                <img src="Images/icons8-wind-100.png" >
+                <div class="flex-center flex-col two">
+                    <p id="hum">5.66 km/h</p>
+                    <p class="sec-titile">Wind Speed</p>
+                </div>
+            </div>
+        </div>
+      </section>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
