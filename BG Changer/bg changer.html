@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bg changer</title>
+</head>
+
+<body>
+    <button id="Start">Start</button>
+    <button id="Stop">Stop</button>
+
+    <script>
+        const startBtn = document.querySelector("#Start")
+        const stopBtn = document.querySelector("#Stop")
+        const body = document.querySelector("body")
+
+        let intervalId
+        startBtn.addEventListener("click", () => {
+            if (!intervalId) {
+                intervalId = setInterval(changeBg, 500);
+            }
+        })
+        stopBtn.addEventListener("click", () => {
+            clearInterval(intervalId);
+            intervalId = null;
+        })
+        function changeBg() {
+            let r = Math.floor(Math.random() * 256);
+            let g = Math.floor(Math.random() * 256);
+            let b = Math.floor(Math.random() * 256);
+
+            let hexR = r.toString(16).padStart(2, '0'); // Ensure two digits
+            let hexG = g.toString(16).padStart(2, '0'); // Ensure two digits
+            let hexB = b.toString(16).padStart(2, '0'); // Ensure two digits
+
+            let color = '#' + hexR + hexG + hexB;
+            body.style.backgroundColor = color
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>
