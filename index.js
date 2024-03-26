@@ -1,13 +1,16 @@
+// require('dotenv').config();
 const search = document.querySelector("#search");
 const inputLoc = document.querySelector("#locationInput");
 const dispHum = document.querySelector("#hum");
 const dispWindSpeed = document.querySelector("#wind");
 const dispTemp = document.querySelector("#temp");
-const dispLoc=document.querySelector("#loc");
-const img=document.querySelector("img");
-// let src=`Images/${src}`;
+const dispLoc = document.querySelector("#loc");
+const img = document.querySelector("img");
+let src;
+let Imgsrc = `Images/${src}`;
 let weather;
-
+// const apiKey = process.env.API_KEY;
+// console.log(process.env)
 search.addEventListener("click", () => {
   console.log("clicked");
   inputCity = inputLoc.value;
@@ -26,19 +29,25 @@ search.addEventListener("click", () => {
       dispWindSpeed.innerText = `${data.wind.speed}km/hr`;
       dispTemp.innerText = `${Math.floor(data.main.temp - 273.15)}°C`;
       weather = data.weather[0].main;
-      console.log(weather)
-      dispLoc.innerText=data.name
+      dispLoc.innerText = data.name;
     })
     .catch((error) => console.log(error))
     .finally(() =>
-      console.log(
-        "The work is eaither done or not done but execution is completed "
+    console.log(
+      "The work is either done or not done but execution is completed "
       )
-    );
-    // changeImg();
+      );
+      changeImg();
+      // console.log(typeof weather);
+      console.log(weather);
 });
 
-// function changeImg() {
-//     if(weather=="clear")
-//     if(weather=="clear")
-// }
+function changeImg() {
+  // if(weather=="clear") {
+  //   src+=``;
+  // }
+  if (weather == "Rain") {
+    src += `rain.png`;
+    console.log(src);
+  }
+}
